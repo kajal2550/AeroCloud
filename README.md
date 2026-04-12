@@ -1,7 +1,7 @@
 # ✈️ AeroCloud — Next-Gen Flight Management & Reservation System
 
 <div align="center">
-  <img src="https://images.unsplash.com/photo-1436491865332-7a61a109c0f3?w=800&q=80" alt="AeroCloud Banner" width="600" style="border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.3);" />
+  <img src="https://images.unsplash.com/photo-1542296332-2e4473faf563?w=800&q=80" alt="AeroCloud Banner" width="700" />
   <p align="center">
     <h3>Elevate Your Journey with India's Most Premium Airline Management Portal 🚀</h3>
   </p>
