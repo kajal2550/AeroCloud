@@ -103,7 +103,7 @@ const Navbar = () => {
                 style={{
                   background: 'var(--surface-overlay-medium)',
                   border: '1px solid var(--surface-border)',
-                  color: '#fff',
+                  color: 'var(--text-primary)',
                   padding: '6px 10px',
                   borderRadius: '12px',
                   fontSize: '14px',
