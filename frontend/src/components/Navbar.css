@@ -1,0 +1,235 @@
+.navbar {
+  position: sticky;
+  top: 0.25rem; /* Further reduced from 0.5rem */
+  z-index: 1000;
+  margin: 0.5rem 1rem; /* Further narrowed margin */
+  padding: 0.4rem 1rem; /* Further reduced vertical padding */
+  overflow: visible !important; /* Allow dropdowns to overflow */
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem; /* Reduced from 1.5rem */
+  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
+  gap: 0.4rem;
+}
+
+.logo-icon {
+  color: var(--primary);
+  transform: rotate(45deg);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 2.5rem;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Reduced from 2rem */
+}
+
+.nav-item {
+  color: var(--text-main);
+  font-weight: 500;
+  font-size: 0.85rem; /* Further reduced from 0.95rem */
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  padding: 0.4rem 0;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-gradient);
+  transition: width 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+  border-radius: 2px;
+}
+
+.nav-item:hover {
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--primary-glow);
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+.system-icons {
+  border-right: 1px solid var(--surface-border);
+  padding-right: 1.5rem;
+}
+
+.icon-btn {
+  background: transparent;
+  color: var(--text-muted);
+  padding: 0.4rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.icon-btn:hover {
+  background: var(--surface-hover);
+  color: var(--primary);
+}
+
+.notif-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  background: var(--error);
+  border-radius: 50%;
+  border: 2px solid var(--bg-color);
+}
+
+.auth-section {
+  padding-left: 0.5rem;
+}
+
+.user-profile {
+  padding: 0.3rem 0.6rem; /* Reduced from 0.4rem 0.8rem */
+  background: var(--surface-overlay-light);
+  border-radius: 12px;
+  border: 1px solid var(--surface-border);
+}
+
+.user-name {
+  font-size: 0.85rem; /* Reduced from 0.9rem */
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.avatar-sm {
+  width: 28px;
+  height: 28px;
+  background: var(--accent-gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.admin-badge {
+  font-size: 0.75rem;
+  background: rgba(88, 166, 255, 0.1);
+  color: var(--primary);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-weight: 700;
+  border: 1px solid rgba(88, 166, 255, 0.2);
+}
+
+.logout-icon-btn {
+  background: transparent;
+  color: var(--text-muted);
+  transition: all 0.3s;
+}
+
+.logout-icon-btn:hover {
+  color: var(--error);
+  transform: scale(1.1);
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.notif-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0; /* Align right edge with the bell icon */
+  width: 320px;
+  background: var(--surface-overlay-solid);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  z-index: 100;
+  text-align: left;
+  border: 1px solid var(--surface-border);
+}
+
+.notif-header {
+  padding: 1rem;
+  border-bottom: 1px solid var(--surface-border);
+  background: var(--surface-overlay-dark);
+}
+
+.notif-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.notif-body {
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.notif-empty {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.notif-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--surface-border);
+  transition: background 0.2s ease;
+}
+
+.notif-item:hover {
+  background: var(--surface-hover);
+}
+
+.notif-icon {
+  margin-top: 4px;
+  color: var(--primary);
+}
+
+.notif-item p {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.85rem;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+.notif-item small {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 1024px) {
+  .nav-menu {
+    display: none;
+  }
+}

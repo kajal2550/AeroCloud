@@ -1,0 +1,429 @@
+.checkout-page {
+    padding: 120px 0 80px;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+/* Razorpay Loading Transition Overlay */
+.razorpay-loader-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.razorpay-loader-box {
+    background: #ffffff;
+    border-radius: 12px;
+    width: 85vw;
+    height: 72vh;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.rzp-shield-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 6px 18px rgba(37, 99, 255, 0.3));
+    margin-bottom: 0;
+}
+
+.rzp-secured-text {
+    font-size: 0.85rem;
+    color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 30px; /* Logo ke bilkul theek thoda niche */
+    font-weight: 500;
+}
+
+.rzp-secured-text img {
+    margin-top: 2px; /* Alignment tweak for the image */
+}
+
+
+.payment-page-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 14px 20px;
+}
+
+.payment-page-summary .flight-tag {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+}
+
+.payment-page-summary .price-tag {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #10b981;
+}
+
+
+.checkout-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 20px 0 40px;
+    color: white;
+    text-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Glass Card Style */
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    color: white;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.icon-wrap {
+    width: 44px;
+    height: 44px;
+    background: rgba(43, 92, 255, 0.2);
+    color: #58a6ff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(88, 166, 255, 0.3);
+}
+
+.icon-wrap.green {
+    background: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+    border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.section-header h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.location-detector {
+    background: rgba(16, 185, 129, 0.05);
+    border: 1px dashed rgba(16, 185, 129, 0.3);
+    padding: 18px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: rgba(52, 211, 153, 0.5);
+    font-weight: 700;
+    margin-bottom: 30px;
+    transition: all 0.5s ease;
+}
+
+.location-detector.success-detected {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.5);
+    color: #34d399;
+}
+
+.location-detector.success-detected svg {
+    filter: drop-shadow(0 0 8px rgba(52, 211, 153, 0.6));
+}
+
+.manual-entry-label {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9rem;
+    position: relative;
+    margin: 30px 0;
+}
+
+.manual-entry-label::before,
+.manual-entry-label::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 35%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.manual-entry-label::before { left: 0; }
+.manual-entry-label::after { right: 0; }
+
+.address-inputs label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 10px;
+}
+
+.address-inputs input {
+    width: 100%;
+    padding: 14px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 25px;
+    font-size: 1rem;
+    color: white;
+    transition: all 0.3s;
+}
+
+.address-inputs input:focus {
+    border-color: #2b5cff;
+    background: rgba(255, 255, 255, 0.08);
+    outline: none;
+    box-shadow: 0 0 15px rgba(43, 92, 255, 0.2);
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.date-input-wrap {
+    position: relative;
+}
+
+.date-input-wrap .input-icon {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Payment Methods List */
+.payment-methods-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.payment-method-option {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 20px;
+    border: 1.5px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.02);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.payment-method-option:hover {
+    border-color: rgba(16, 185, 129, 0.3);
+    background: rgba(16, 185, 129, 0.04);
+}
+
+.payment-method-option.selected {
+    border-color: rgba(16, 185, 129, 0.6);
+    background: rgba(16, 185, 129, 0.07);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
+}
+
+.method-radio {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: border-color 0.2s;
+}
+
+.payment-method-option.selected .method-radio {
+    border-color: #10b981;
+}
+
+.radio-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: transparent;
+    transition: all 0.2s;
+}
+
+.radio-dot.active {
+    background: #10b981;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+}
+
+.method-icon-wrap {
+    font-size: 1.4rem;
+    width: 36px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.method-details { flex: 1; }
+
+.method-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 3px;
+}
+
+.method-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #fff;
+}
+
+.method-badge {
+    background: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.method-sub {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.razorpay-secure-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 0.82rem;
+    margin-top: 4px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.razorpay-secure-tag strong { color: rgba(255, 255, 255, 0.55); }
+
+
+/* Right Sidebar: Order Summary */
+.order-summary-card h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0 0 30px;
+    background: linear-gradient(to right, #fff, rgba(255,255,255,0.6));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.summary-total {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 25px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.total-price {
+    color: #10b981;
+    font-size: 1.8rem;
+    text-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+}
+
+.pay-book-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 15px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin: 30px 0 15px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+}
+
+.pay-book-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(16, 185, 129, 0.4);
+}
+
+.secure-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.85rem;
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+@media (max-width: 900px) {
+    .checkout-grid {
+        grid-template-columns: 1fr;
+    }
+}

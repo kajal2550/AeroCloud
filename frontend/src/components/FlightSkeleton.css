@@ -1,0 +1,36 @@
+.flight-skeleton {
+  min-height: 220px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sk-airline, .sk-number, .sk-point, .sk-line, .sk-price, .sk-btn {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.05) 75%);
+  background-size: 200% 100%;
+  animation: sk-loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes sk-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.sk-airline { width: 120px; height: 24px; }
+.sk-number { width: 60px; height: 18px; }
+.sk-point { width: 80px; height: 32px; border-radius: 10px; }
+.sk-line { flex: 1; height: 2px; margin: 0 1rem; }
+.sk-price { width: 100px; height: 32px; }
+.sk-btn { width: 120px; height: 40px; border-radius: 10px; }
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}

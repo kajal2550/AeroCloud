@@ -1,0 +1,91 @@
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-table th {
+  padding: 0.75rem 0.5rem; /* Reduced from 1.25rem 1rem */
+  border-bottom: 1px solid var(--surface-border);
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem; /* Reduced from 0.8rem */
+  letter-spacing: 0.05em;
+}
+
+.admin-table td {
+  padding: 0.75rem 0.5rem; /* Reduced from 1.25rem 1rem */
+  border-bottom: 1px solid var(--surface-border);
+  font-size: 0.9rem;
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.route-cell {
+  display: flex;
+  align-items: center;
+}
+
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.font-mono {
+  font-family: monospace;
+}
+
+.action-btns button {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.action-btns .text-error:hover {
+  background: rgba(248, 81, 73, 0.1);
+  color: var(--error);
+}
+
+/* Modal Styling Overridden by global .modal-overlay in index.css */
+.modal-content {
+  width: 100%;
+  max-width: 550px; /* Narrower */
+  padding: 1.5rem; /* Reduced from 2rem */
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.p-4 {
+  padding: 1.5rem; /* Reduced from 2rem */
+}
+
+.w-full {
+  width: 100%;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
