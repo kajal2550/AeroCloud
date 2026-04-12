@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { User, CreditCard, ChevronRight, ChevronLeft, X, UserCheck, Eye, UtensilsCrossed } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ThemeContext } from '../context/ThemeContext';
 import './PassengerForm.css';
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
@@ -20,7 +21,7 @@ const getMealCalories = (index, name = '') => {
 const getMealCategory = (dish) => dish.strCategory || 'Main Course';
 
 // ── Meal Gallery Modal ──────────────────────────────────────────────────────
-const MealGalleryModal = ({ mealType, onClose }) => {
+const MealGalleryModal = ({ mealType, onClose, theme }) => {
   const [dishes, setDishes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState(null);
@@ -59,13 +60,15 @@ const MealGalleryModal = ({ mealType, onClose }) => {
 
   return (
     <AnimatePresence>
-      <motion.div
-        className="meal-gallery-overlay"
-        initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-        onClick={onClose}
-      >
-        <motion.div
-          className="meal-gallery-modal"
+      <motion.div 
+      className={`meal-gallery-overlay ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }} 
+      exit={{ opacity: 0 }}
+      onClick={onClose}
+    >
+      <motion.div 
+        className="meal-gallery-modal"
           initial={{ opacity: 0, scale: 0.92, y: 40 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.92, y: 40 }}
@@ -201,7 +204,8 @@ const MealGalleryModal = ({ mealType, onClose }) => {
 };
 
 // ── Main PassengerForm ──────────────────────────────────────────────────────
-const PassengerForm = ({ onConfirm, onCancel, passengerCount = 1 }) => {
+const PassengerForm = ({ passengerCount, onConfirm, onCancel }) => {
+  const { theme } = useContext(ThemeContext);
   const [passengers, setPassengers] = useState(
     Array.from({ length: passengerCount }, () => ({
       name: '',
@@ -443,6 +447,7 @@ const PassengerForm = ({ onConfirm, onCancel, passengerCount = 1 }) => {
         <MealGalleryModal
           mealType={showMealGallery.meal}
           onClose={() => setShowMealGallery(null)}
+          theme={theme}
         />
       )}
     </>

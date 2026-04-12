@@ -83,8 +83,8 @@
     font-size: 2.5rem;
     font-weight: 900;
     margin: 20px 0 40px;
-    color: white;
-    text-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    color: var(--text-primary);
+    text-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .checkout-grid {
@@ -96,13 +96,13 @@
 
 /* Glass Card Style */
 .card {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--surface-color);
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--surface-border);
     border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    color: white;
+    box-shadow: var(--glass-shadow);
+    color: var(--text-primary);
 }
 
 .section-header {
@@ -163,7 +163,7 @@
 
 .manual-entry-label {
     text-align: center;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--text-muted);
     font-size: 0.9rem;
     position: relative;
     margin: 30px 0;
@@ -176,7 +176,7 @@
     top: 50%;
     width: 35%;
     height: 1px;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--surface-border);
 }
 
 .manual-entry-label::before { left: 0; }
@@ -186,19 +186,19 @@
     display: block;
     font-size: 0.85rem;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--text-main);
     margin-bottom: 10px;
 }
 
 .address-inputs input {
     width: 100%;
     padding: 14px 20px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid var(--surface-border);
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--bg-color);
     margin-bottom: 25px;
     font-size: 1rem;
-    color: white;
+    color: var(--text-primary);
     transition: all 0.3s;
 }
 
@@ -404,9 +404,9 @@
 }
 
 .back-btn {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.7);
+    background: var(--surface-color);
+    border: 1px solid var(--surface-border);
+    color: var(--text-main);
     display: flex;
     align-items: center;
     gap: 8px;
