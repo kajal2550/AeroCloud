@@ -116,9 +116,9 @@ AeroCloud/
 **Kajal Rajput**  
 *Full-Stack Web Developer | UI/UX Designer*
 
-- **LinkedIn:** [linkedin.com/in/kajalrajput](https://linkedin.com/in/kajalrajput)
-- **GitHub:** [@KajalRajput](https://github.com/KajalRajput)
-- **Email:** kajal.rajput@example.com
+- **LinkedIn:** [linkedin.com/in/kajalkumari9900](https://www.linkedin.com/in/kajalkumari9900)
+- **GitHub:** [@kajal2550](https://github.com/kajal2550)
+- **Email:** [kajalrajput808476566@gmail.com](mailto:kajalrajput808476566@gmail.com)
 
 ---
 
