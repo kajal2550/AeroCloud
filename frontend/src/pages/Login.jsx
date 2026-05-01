@@ -93,21 +93,6 @@ const Login = () => {
           </button>
         </form>
 
-        <div className="auth-divider">
-          <span>OR</span>
-        </div>
-
-        <div className="google-login-container">
-            <GoogleLogin
-              onSuccess={handleGoogleSuccess}
-              onError={handleGoogleError}
-              theme="filled_black"
-              shape="pill"
-              text="continue_with"
-              width="100%"
-            />
-        </div>
-
         <div className="auth-footer text-center mt-4">
           <p className="text-muted">Don't have an account? <Link to="/register" className="text-gradient">Sign Up</Link></p>
         </div>

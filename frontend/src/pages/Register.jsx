@@ -90,21 +90,6 @@ const Register = () => {
           </button>
         </form>
 
-        <div className="auth-divider">
-          <span>OR</span>
-        </div>
-
-        <div className="google-login-container">
-            <GoogleLogin
-              onSuccess={handleGoogleSuccess}
-              onError={handleGoogleError}
-              theme="filled_black"
-              shape="pill"
-              text="continue_with"
-              width="100%"
-            />
-        </div>
-
         <div className="auth-footer text-center mt-4">
           <p className="text-muted">Already have an account? <Link to="/login" className="text-gradient">Sign In</Link></p>
         </div>

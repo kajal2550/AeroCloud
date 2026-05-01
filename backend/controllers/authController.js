@@ -72,6 +72,10 @@ exports.register = async (req, res, next) => {
 
     sendTokenResponse(user, 201, res);
   } catch (err) {
+    if (err.code === 11000) {
+      const user = await User.findOne({ email: req.body.email });
+      return sendTokenResponse(user, 200, res);
+    }
     res.status(400).json({ success: false, error: err.message });
   }
 };
